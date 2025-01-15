@@ -57,7 +57,7 @@
             this.closeBTN.FlatAppearance.BorderSize = 0;
             this.closeBTN.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkRed;
             this.closeBTN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.closeBTN.Font = new System.Drawing.Font("JetBrainsMono NF ExtraBold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.closeBTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.closeBTN.ForeColor = System.Drawing.Color.White;
             this.closeBTN.Location = new System.Drawing.Point(0, 500);
             this.closeBTN.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -71,12 +71,12 @@
             // toggleCHKBX
             // 
             this.toggleCHKBX.AutoSize = true;
-            this.toggleCHKBX.Font = new System.Drawing.Font("JetBrainsMono NF ExtraBold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toggleCHKBX.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toggleCHKBX.ForeColor = System.Drawing.Color.White;
             this.toggleCHKBX.Location = new System.Drawing.Point(13, 25);
             this.toggleCHKBX.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.toggleCHKBX.Name = "toggleCHKBX";
-            this.toggleCHKBX.Size = new System.Drawing.Size(166, 20);
+            this.toggleCHKBX.Size = new System.Drawing.Size(136, 19);
             this.toggleCHKBX.TabIndex = 2;
             this.toggleCHKBX.Text = "Toggle Recoil Script";
             this.toggleCHKBX.UseVisualStyleBackColor = true;
@@ -87,12 +87,12 @@
             this.reqAdsCHKBX.AutoSize = true;
             this.reqAdsCHKBX.Checked = true;
             this.reqAdsCHKBX.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.reqAdsCHKBX.Font = new System.Drawing.Font("JetBrainsMono NF ExtraBold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reqAdsCHKBX.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.reqAdsCHKBX.ForeColor = System.Drawing.Color.White;
             this.reqAdsCHKBX.Location = new System.Drawing.Point(13, 49);
             this.reqAdsCHKBX.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.reqAdsCHKBX.Name = "reqAdsCHKBX";
-            this.reqAdsCHKBX.Size = new System.Drawing.Size(103, 20);
+            this.reqAdsCHKBX.Size = new System.Drawing.Size(108, 19);
             this.reqAdsCHKBX.TabIndex = 3;
             this.reqAdsCHKBX.Text = "REQUIRE ADS";
             this.reqAdsCHKBX.UseVisualStyleBackColor = true;
@@ -103,11 +103,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.titleLabel.AutoSize = true;
             this.titleLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.titleLabel.Font = new System.Drawing.Font("JetBrainsMono NF ExtraBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.titleLabel.ForeColor = System.Drawing.Color.White;
             this.titleLabel.Location = new System.Drawing.Point(116, 9);
             this.titleLabel.Name = "titleLabel";
-            this.titleLabel.Size = new System.Drawing.Size(84, 16);
+            this.titleLabel.Size = new System.Drawing.Size(81, 15);
             this.titleLabel.TabIndex = 4;
             this.titleLabel.Text = "Geilon Tool";
             this.titleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -132,14 +132,14 @@
             this.operatorCOMBX.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.operatorCOMBX.ForeColor = System.Drawing.Color.White;
             this.operatorCOMBX.FormattingEnabled = true;
-            this.operatorCOMBX.ItemHeight = 14;
+            this.operatorCOMBX.ItemHeight = 13;
             this.operatorCOMBX.Items.AddRange(new object[] {
             "ASH",
             "THERMITE",
             "JACKAL"});
             this.operatorCOMBX.Location = new System.Drawing.Point(0, 0);
             this.operatorCOMBX.Name = "operatorCOMBX";
-            this.operatorCOMBX.Size = new System.Drawing.Size(323, 22);
+            this.operatorCOMBX.Size = new System.Drawing.Size(323, 21);
             this.operatorCOMBX.TabIndex = 6;
             this.operatorCOMBX.SelectedIndexChanged += new System.EventHandler(this.operatorCOMBX_SelectedIndexChanged);
             // 
@@ -192,12 +192,12 @@
             // customRecoilCHKBX
             // 
             this.customRecoilCHKBX.AutoSize = true;
-            this.customRecoilCHKBX.Font = new System.Drawing.Font("JetBrainsMono NF ExtraBold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customRecoilCHKBX.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.customRecoilCHKBX.ForeColor = System.Drawing.Color.White;
             this.customRecoilCHKBX.Location = new System.Drawing.Point(13, 10);
             this.customRecoilCHKBX.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.customRecoilCHKBX.Name = "customRecoilCHKBX";
-            this.customRecoilCHKBX.Size = new System.Drawing.Size(166, 20);
+            this.customRecoilCHKBX.Size = new System.Drawing.Size(147, 19);
             this.customRecoilCHKBX.TabIndex = 9;
             this.customRecoilCHKBX.Text = "Toggle Custom Recoil";
             this.customRecoilCHKBX.UseVisualStyleBackColor = true;
@@ -206,11 +206,11 @@
             // customRecoilLabel
             // 
             this.customRecoilLabel.AutoSize = true;
-            this.customRecoilLabel.Font = new System.Drawing.Font("JetBrainsMono NF ExtraBold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customRecoilLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.customRecoilLabel.ForeColor = System.Drawing.Color.White;
             this.customRecoilLabel.Location = new System.Drawing.Point(12, 33);
             this.customRecoilLabel.Name = "customRecoilLabel";
-            this.customRecoilLabel.Size = new System.Drawing.Size(119, 16);
+            this.customRecoilLabel.Size = new System.Drawing.Size(100, 15);
             this.customRecoilLabel.TabIndex = 8;
             this.customRecoilLabel.Text = "Custom Recoil: 0";
             // 
@@ -228,7 +228,7 @@
             // 
             // baseWindow
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(323, 534);
@@ -238,7 +238,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.topBarPNL);
             this.Controls.Add(this.closeBTN);
-            this.Font = new System.Drawing.Font("JetBrainsMono NF ExtraBold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
