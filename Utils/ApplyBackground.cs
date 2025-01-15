@@ -13,14 +13,14 @@ namespace R6Schulprojekt.Utils
     {
         public static void ApplyGradient(Form form, PaintEventArgs e)
         {
-            //using (LinearGradientBrush brush = new LinearGradientBrush(form.ClientRectangle, Color.DarkSlateGray, Color.Black, LinearGradientMode.Vertical))
-            //{
-            //    e.Graphics.FillRectangle(brush, form.ClientRectangle);
-            //}
-            using (LinearGradientBrush brush = new LinearGradientBrush(form.ClientRectangle, Color.Navy, Color.DarkSlateGray, 45f))
+            using (LinearGradientBrush brush = new LinearGradientBrush(form.ClientRectangle, Color.DarkSlateGray, Color.Black, LinearGradientMode.Vertical))
             {
                 e.Graphics.FillRectangle(brush, form.ClientRectangle);
             }
+            //using (LinearGradientBrush brush = new LinearGradientBrush(form.ClientRectangle, Color.Navy, Color.DarkSlateGray, 45f))
+            //{
+            //    e.Graphics.FillRectangle(brush, form.ClientRectangle);
+            //}
         }
     }
 }

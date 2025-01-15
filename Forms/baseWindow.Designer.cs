@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(baseWindow));
             this.closeBTN = new System.Windows.Forms.Button();
             this.toggleCHKBX = new System.Windows.Forms.CheckBox();
             this.reqAdsCHKBX = new System.Windows.Forms.CheckBox();
@@ -40,11 +41,13 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.customRecoilCHKBX = new System.Windows.Forms.CheckBox();
             this.customRecoilLabel = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.topBarPNL.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.recoilSlider)).BeginInit();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // closeBTN
@@ -211,12 +214,25 @@
             this.customRecoilLabel.TabIndex = 8;
             this.customRecoilLabel.Text = "Custom Recoil: 0";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = global::R6Schulprojekt.Properties.Resources.Logo1;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 252);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(323, 248);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 10;
+            this.pictureBox1.TabStop = false;
+            // 
             // baseWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Black;
+            this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(323, 534);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -225,9 +241,10 @@
             this.Font = new System.Drawing.Font("JetBrainsMono NF ExtraBold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "baseWindow";
-            this.Opacity = 0.9D;
+            this.Opacity = 0.8D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "R6 Schulprojekt";
             this.Load += new System.EventHandler(this.baseWindow_Load);
@@ -239,6 +256,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.recoilSlider)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -256,5 +274,6 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.CheckBox customRecoilCHKBX;
         private System.Windows.Forms.Label customRecoilLabel;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
