@@ -16,7 +16,7 @@ namespace R6Schulprojekt
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new baseWindow());
+            Application.Run(new BaseWindow());
         }
     }
 }

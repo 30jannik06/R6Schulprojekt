@@ -8,9 +8,8 @@ using System.Windows.Forms;
 
 namespace R6Schulprojekt
 {
-    public partial class baseWindow : Form
+    public partial class BaseWindow : Form
     {
-        // P/Invoke Deklarationen
         [DllImport("user32.dll")]
         private static extern short GetAsyncKeyState(Keys vKey);
 
@@ -41,10 +40,11 @@ namespace R6Schulprojekt
             public IntPtr dwExtraInfo;
         }
 
+        //Move Variablen
         private const int INPUT_MOUSE = 0;
         private const int MOUSEEVENTF_MOVE = 0x0001;
 
-        // Variablen
+        //Variablen
         private int pullDownRate = 3;
         private Thread recoilThread;
         private bool keepRecoilActive = false;
@@ -73,15 +73,14 @@ namespace R6Schulprojekt
             public override string ToString() => Name;
         }
 
-        public baseWindow()
+        public BaseWindow()
         {
             InitializeComponent();
-            this.Load += baseWindow_Load;
+            this.Load += new EventHandler(baseWindow_Load);
             RoundedCorners.SetRoundedCorners(this, 20);
 
             recoilSlider.Enabled = false;
 
-            // Liste der Operatoren
             var operators = new List<Operator>
             {
                 new Operator(1, "Ash", 53),
@@ -100,14 +99,14 @@ namespace R6Schulprojekt
                 new Operator(14, "Thorn", 17)
             };
 
-            operatorCOMBX.DataSource = operators;
-            operatorCOMBX.DisplayMember = "Name";
-            operatorCOMBX.ValueMember = "Id";
+            operatorComboBox.DataSource = operators;
+            operatorComboBox.DisplayMember = "Name";
+            operatorComboBox.ValueMember = "Id";
         }
 
         protected override void OnPaint(PaintEventArgs e)
         {
-            ApplyBackground.ApplyGradient(this, e);
+            //ApplyBackground.ApplyGradient(this, e);
         }
 
         private void baseWindow_Load(object sender, EventArgs e)
@@ -118,7 +117,7 @@ namespace R6Schulprojekt
 
         private void operatorCOMBX_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (operatorCOMBX.SelectedItem is Operator selectedOperator)
+            if (operatorComboBox.SelectedItem is Operator selectedOperator)
             {
                 pullDownRate = selectedOperator.PullDownRate;
                 recoilSlider.Value = pullDownRate;
@@ -142,22 +141,7 @@ namespace R6Schulprojekt
             }
         }
 
-        //private void RecoilControl()
-        //{
-        //    while (keepRecoilActive)
-        //    {
-        //        if ((GetAsyncKeyState(Keys.LButton) & 0x8000) != 0 && toggleCHKBX.Checked)
-        //            if ((GetAsyncKeyState(Keys.RButton) & 0x8000) != 0 || !reqAdsCHKBX.Checked)
-        //            {
-        //                POINT currentPos;
-        //                GetCursorPos(out currentPos);
-        //                SetCursorPos(currentPos.X, currentPos.Y + pullDownRate);
-        //                Thread.Sleep(10);
-        //            }
-        //        Thread.Sleep(5);
-        //    }
-        //}
-
+        #region Recoil Control
         private void RecoilControl()
         {
             while (keepRecoilActive)
@@ -186,12 +170,9 @@ namespace R6Schulprojekt
             recoilThread?.Join();
             base.OnFormClosed(e);
         }
+        #endregion
 
-        private void closeBTN_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
+        #region TopBar Dragging
         private bool isDragging = false;
         private Point lastCursorPosition;
 
@@ -218,19 +199,36 @@ namespace R6Schulprojekt
         {
             isDragging = false;
         }
+        #endregion
+
+        #region Custom Recoil Slider
+        private void customRecoilCHKBX_CheckedChanged(object sender, EventArgs e)
+        {
+            recoilSlider.Enabled = customRecoilCHKBX.Checked;
+        }
 
         private void recoilSlider_Scroll(object sender, EventArgs e)
         {
             if (customRecoilCHKBX.Checked)
             {
-                customRecoilLabel.Text = $"Custom Recoil: {recoilSlider.Value}";
                 pullDownRate = recoilSlider.Value;
+                customRecoilLabel.Text = $"Custom Recoil: {recoilSlider.Value}";
             }
         }
+        #endregion
 
-        private void customRecoilCHKBX_CheckedChanged(object sender, EventArgs e)
+        #region Hide Button
+        private void hideBTN_Click(object sender, EventArgs e)
         {
-            recoilSlider.Enabled = customRecoilCHKBX.Checked;
+            this.WindowState = FormWindowState.Minimized;
         }
+        #endregion
+
+        #region Close Button
+        private void closeBTN_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+        #endregion
     }
 }
