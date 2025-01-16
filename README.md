@@ -78,3 +78,6 @@ Github  [@30jannik06](https://www.github.com/30jannik06)
 | Discord [@.Jannik](https://discordapp.com/users/268084996235853824)
 
 Viel Spaß beim Spielen! 🎮
+## VirusTotal 
+
+[LINK to Scan](https://www.virustotal.com/gui/file/6ad86f8dc5b59e07313108c78aae08c605d9237cbd39296af2c4170a3084d41a/detection)
