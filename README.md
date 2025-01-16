@@ -3,6 +3,7 @@
 
 R6Schulprojekt ist eine Windows Forms Anwendung in C#, die für Rainbow Six Siege entwickelt wurde. Die Anwendung simuliert einen Recoil Control Mechanismus, der den Mauszeiger basierend auf der gewählten Spielfigur (Operator) nach unten bewegt.
 
+❗❗Edcuational Purposes only❗❗
 ## Features
 
 - **Operator Auswahl:** Auswahl verschiedener Operatoren mit unterschiedlichen Rückstoßwerten.
