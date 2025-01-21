@@ -104,11 +104,6 @@ namespace R6Schulprojekt
             operatorComboBox.ValueMember = "Id";
         }
 
-        protected override void OnPaint(PaintEventArgs e)
-        {
-            //ApplyBackground.ApplyGradient(this, e);
-        }
-
         private void baseWindow_Load(object sender, EventArgs e)
         {
             FadeInAnimation.Start(this);
