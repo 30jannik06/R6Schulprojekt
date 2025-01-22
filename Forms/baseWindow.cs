@@ -96,7 +96,21 @@ namespace R6Schulprojekt
                 new Operator(11, "Alibi", 27),
                 new Operator(12, "Doc", 43),
                 new Operator(13, "Rook", 43),
-                new Operator(14, "Thorn", 17)
+                new Operator(14, "Thorn", 17),
+                new Operator(15, "Thatcher", 34),
+                new Operator(16, "Glaz", 36),
+                new Operator(17, "Fuze LMG", 41),
+                new Operator(18, "Fuze AK", 21),
+                new Operator(19, "IQ AUG", 53),
+                new Operator(20, "IQ COMMANDO", 21),
+                new Operator(21, "IQ G8A1", 18),
+                new Operator(22, "IQ G8A1", 18),
+                new Operator(23, "Buck C8", 50),
+                new Operator(23, "Buck Camrs", 38),
+                new Operator(25, "Blackbeard Mk17", 10),
+                new Operator(26, "Blackbeard SR-25", 38),
+                new Operator(27, "Capitau Para", 38),
+                new Operator(28, "Capitau M249", 15)
             };
 
             operatorComboBox.DataSource = operators;

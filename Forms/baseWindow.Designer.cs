@@ -56,7 +56,7 @@
             this.closeBTN.FlatAppearance.BorderSize = 0;
             this.closeBTN.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkRed;
             this.closeBTN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.closeBTN.Font = new System.Drawing.Font("JetBrains Mono", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.closeBTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.closeBTN.ForeColor = System.Drawing.Color.White;
             this.closeBTN.Location = new System.Drawing.Point(303, 0);
             this.closeBTN.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -72,13 +72,13 @@
             // 
             this.toggleCHKBX.AutoSize = true;
             this.toggleCHKBX.Dock = System.Windows.Forms.DockStyle.Top;
-            this.toggleCHKBX.Font = new System.Drawing.Font("JetBrains Mono", 9F, System.Drawing.FontStyle.Bold);
+            this.toggleCHKBX.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.toggleCHKBX.ForeColor = System.Drawing.Color.White;
             this.toggleCHKBX.Location = new System.Drawing.Point(0, 0);
             this.toggleCHKBX.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.toggleCHKBX.Name = "toggleCHKBX";
             this.toggleCHKBX.Padding = new System.Windows.Forms.Padding(10, 15, 0, 0);
-            this.toggleCHKBX.Size = new System.Drawing.Size(323, 35);
+            this.toggleCHKBX.Size = new System.Drawing.Size(323, 34);
             this.toggleCHKBX.TabIndex = 2;
             this.toggleCHKBX.Text = "Toggle Recoil Script";
             this.toggleCHKBX.UseVisualStyleBackColor = true;
@@ -90,13 +90,13 @@
             this.reqAdsCHKBX.Checked = true;
             this.reqAdsCHKBX.CheckState = System.Windows.Forms.CheckState.Checked;
             this.reqAdsCHKBX.Dock = System.Windows.Forms.DockStyle.Top;
-            this.reqAdsCHKBX.Font = new System.Drawing.Font("JetBrains Mono", 9F, System.Drawing.FontStyle.Bold);
+            this.reqAdsCHKBX.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.reqAdsCHKBX.ForeColor = System.Drawing.Color.White;
-            this.reqAdsCHKBX.Location = new System.Drawing.Point(0, 35);
+            this.reqAdsCHKBX.Location = new System.Drawing.Point(0, 34);
             this.reqAdsCHKBX.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.reqAdsCHKBX.Name = "reqAdsCHKBX";
             this.reqAdsCHKBX.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.reqAdsCHKBX.Size = new System.Drawing.Size(323, 20);
+            this.reqAdsCHKBX.Size = new System.Drawing.Size(323, 19);
             this.reqAdsCHKBX.TabIndex = 3;
             this.reqAdsCHKBX.Text = "REQUIRE ADS";
             this.reqAdsCHKBX.UseVisualStyleBackColor = true;
@@ -107,11 +107,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.titleLabel.AutoSize = true;
             this.titleLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.titleLabel.Font = new System.Drawing.Font("JetBrains Mono", 10F, System.Drawing.FontStyle.Bold);
+            this.titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.titleLabel.ForeColor = System.Drawing.Color.White;
             this.titleLabel.Location = new System.Drawing.Point(116, 9);
             this.titleLabel.Name = "titleLabel";
-            this.titleLabel.Size = new System.Drawing.Size(96, 18);
+            this.titleLabel.Size = new System.Drawing.Size(92, 17);
             this.titleLabel.TabIndex = 4;
             this.titleLabel.Text = "Geilon Tool";
             this.titleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -138,7 +138,7 @@
             this.hideBTN.FlatAppearance.BorderSize = 0;
             this.hideBTN.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkRed;
             this.hideBTN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.hideBTN.Font = new System.Drawing.Font("JetBrains Mono", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hideBTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.hideBTN.ForeColor = System.Drawing.Color.White;
             this.hideBTN.Location = new System.Drawing.Point(283, 0);
             this.hideBTN.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -157,14 +157,14 @@
             this.operatorComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.operatorComboBox.ForeColor = System.Drawing.Color.White;
             this.operatorComboBox.FormattingEnabled = true;
-            this.operatorComboBox.ItemHeight = 14;
+            this.operatorComboBox.ItemHeight = 13;
             this.operatorComboBox.Items.AddRange(new object[] {
             "ASH",
             "THERMITE",
             "JACKAL"});
             this.operatorComboBox.Location = new System.Drawing.Point(0, 102);
             this.operatorComboBox.Name = "operatorComboBox";
-            this.operatorComboBox.Size = new System.Drawing.Size(323, 22);
+            this.operatorComboBox.Size = new System.Drawing.Size(323, 21);
             this.operatorComboBox.TabIndex = 6;
             this.operatorComboBox.SelectedIndexChanged += new System.EventHandler(this.operatorCOMBX_SelectedIndexChanged);
             // 
@@ -199,7 +199,7 @@
             this.customRecoilPNL.Controls.Add(this.customRecoilCHKBX);
             this.customRecoilPNL.Controls.Add(this.recoilSlider);
             this.customRecoilPNL.Dock = System.Windows.Forms.DockStyle.Top;
-            this.customRecoilPNL.Location = new System.Drawing.Point(0, 124);
+            this.customRecoilPNL.Location = new System.Drawing.Point(0, 123);
             this.customRecoilPNL.Name = "customRecoilPNL";
             this.customRecoilPNL.Size = new System.Drawing.Size(323, 100);
             this.customRecoilPNL.TabIndex = 9;
@@ -208,12 +208,12 @@
             // 
             this.customRecoilLabel.AutoSize = true;
             this.customRecoilLabel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.customRecoilLabel.Font = new System.Drawing.Font("JetBrains Mono", 9F, System.Drawing.FontStyle.Bold);
+            this.customRecoilLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.customRecoilLabel.ForeColor = System.Drawing.Color.White;
-            this.customRecoilLabel.Location = new System.Drawing.Point(0, 30);
+            this.customRecoilLabel.Location = new System.Drawing.Point(0, 29);
             this.customRecoilLabel.Name = "customRecoilLabel";
             this.customRecoilLabel.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.customRecoilLabel.Size = new System.Drawing.Size(129, 16);
+            this.customRecoilLabel.Size = new System.Drawing.Size(126, 15);
             this.customRecoilLabel.TabIndex = 8;
             this.customRecoilLabel.Text = "Custom Recoil: 0";
             // 
@@ -221,13 +221,13 @@
             // 
             this.customRecoilCHKBX.AutoSize = true;
             this.customRecoilCHKBX.Dock = System.Windows.Forms.DockStyle.Top;
-            this.customRecoilCHKBX.Font = new System.Drawing.Font("JetBrains Mono", 9F, System.Drawing.FontStyle.Bold);
+            this.customRecoilCHKBX.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.customRecoilCHKBX.ForeColor = System.Drawing.Color.White;
             this.customRecoilCHKBX.Location = new System.Drawing.Point(0, 0);
             this.customRecoilCHKBX.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.customRecoilCHKBX.Name = "customRecoilCHKBX";
             this.customRecoilCHKBX.Padding = new System.Windows.Forms.Padding(10, 10, 0, 0);
-            this.customRecoilCHKBX.Size = new System.Drawing.Size(323, 30);
+            this.customRecoilCHKBX.Size = new System.Drawing.Size(323, 29);
             this.customRecoilCHKBX.TabIndex = 9;
             this.customRecoilCHKBX.Text = "Toggle Custom Recoil";
             this.customRecoilCHKBX.UseVisualStyleBackColor = true;
@@ -254,7 +254,7 @@
             this.Controls.Add(this.operatorComboBox);
             this.Controls.Add(this.mainSettingsPNL);
             this.Controls.Add(this.topBarPNL);
-            this.Font = new System.Drawing.Font("JetBrains Mono", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
