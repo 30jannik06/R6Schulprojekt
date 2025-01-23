@@ -42,11 +42,16 @@
             this.customRecoilLabel = new System.Windows.Forms.Label();
             this.customRecoilCHKBX = new System.Windows.Forms.CheckBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.comboBoxesPanel = new System.Windows.Forms.Panel();
+            this.weaponComboBox = new System.Windows.Forms.ComboBox();
+            this.weaponCombLabel = new System.Windows.Forms.Label();
+            this.operatorCombLabel = new System.Windows.Forms.Label();
             this.topBarPNL.SuspendLayout();
             this.mainSettingsPNL.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.recoilSlider)).BeginInit();
             this.customRecoilPNL.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.comboBoxesPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // closeBTN
@@ -163,7 +168,7 @@
             "ASH",
             "THERMITE",
             "JACKAL"});
-            this.operatorComboBox.Location = new System.Drawing.Point(0, 102);
+            this.operatorComboBox.Location = new System.Drawing.Point(0, 16);
             this.operatorComboBox.Name = "operatorComboBox";
             this.operatorComboBox.Size = new System.Drawing.Size(323, 22);
             this.operatorComboBox.TabIndex = 6;
@@ -200,7 +205,7 @@
             this.customRecoilPNL.Controls.Add(this.customRecoilCHKBX);
             this.customRecoilPNL.Controls.Add(this.recoilSlider);
             this.customRecoilPNL.Dock = System.Windows.Forms.DockStyle.Top;
-            this.customRecoilPNL.Location = new System.Drawing.Point(0, 124);
+            this.customRecoilPNL.Location = new System.Drawing.Point(0, 202);
             this.customRecoilPNL.Name = "customRecoilPNL";
             this.customRecoilPNL.Size = new System.Drawing.Size(323, 100);
             this.customRecoilPNL.TabIndex = 9;
@@ -237,13 +242,73 @@
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Image = global::R6Schulprojekt.Properties.Resources.Logo1;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 224);
+            this.pictureBox1.Location = new System.Drawing.Point(0, 302);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(323, 310);
+            this.pictureBox1.Size = new System.Drawing.Size(323, 232);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
+            // 
+            // comboBoxesPanel
+            // 
+            this.comboBoxesPanel.Controls.Add(this.weaponComboBox);
+            this.comboBoxesPanel.Controls.Add(this.weaponCombLabel);
+            this.comboBoxesPanel.Controls.Add(this.operatorComboBox);
+            this.comboBoxesPanel.Controls.Add(this.operatorCombLabel);
+            this.comboBoxesPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.comboBoxesPanel.Location = new System.Drawing.Point(0, 102);
+            this.comboBoxesPanel.Name = "comboBoxesPanel";
+            this.comboBoxesPanel.Size = new System.Drawing.Size(323, 100);
+            this.comboBoxesPanel.TabIndex = 11;
+            // 
+            // weaponComboBox
+            // 
+            this.weaponComboBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
+            this.weaponComboBox.Dock = System.Windows.Forms.DockStyle.Top;
+            this.weaponComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.weaponComboBox.Font = new System.Drawing.Font("JetBrains Mono", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.weaponComboBox.ForeColor = System.Drawing.Color.White;
+            this.weaponComboBox.FormattingEnabled = true;
+            this.weaponComboBox.ItemHeight = 14;
+            this.weaponComboBox.Items.AddRange(new object[] {
+            "ASH",
+            "THERMITE",
+            "JACKAL"});
+            this.weaponComboBox.Location = new System.Drawing.Point(0, 54);
+            this.weaponComboBox.Name = "weaponComboBox";
+            this.weaponComboBox.Size = new System.Drawing.Size(323, 22);
+            this.weaponComboBox.TabIndex = 7;
+            this.weaponComboBox.SelectedIndexChanged += new System.EventHandler(this.weaponCOMBX_SelectedIndexChanged);
+            // 
+            // weaponCombLabel
+            // 
+            this.weaponCombLabel.AutoSize = true;
+            this.weaponCombLabel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.weaponCombLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.weaponCombLabel.Font = new System.Drawing.Font("JetBrains Mono", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.weaponCombLabel.ForeColor = System.Drawing.Color.White;
+            this.weaponCombLabel.Location = new System.Drawing.Point(0, 38);
+            this.weaponCombLabel.Name = "weaponCombLabel";
+            this.weaponCombLabel.Size = new System.Drawing.Size(63, 16);
+            this.weaponCombLabel.TabIndex = 9;
+            this.weaponCombLabel.Text = "Weapons:";
+            this.weaponCombLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // operatorCombLabel
+            // 
+            this.operatorCombLabel.AutoSize = true;
+            this.operatorCombLabel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.operatorCombLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.operatorCombLabel.Font = new System.Drawing.Font("JetBrains Mono", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.operatorCombLabel.ForeColor = System.Drawing.Color.White;
+            this.operatorCombLabel.Location = new System.Drawing.Point(0, 0);
+            this.operatorCombLabel.Name = "operatorCombLabel";
+            this.operatorCombLabel.Size = new System.Drawing.Size(77, 16);
+            this.operatorCombLabel.TabIndex = 8;
+            this.operatorCombLabel.Text = "Operators:";
+            this.operatorCombLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // BaseWindow
             // 
@@ -252,7 +317,7 @@
             this.ClientSize = new System.Drawing.Size(323, 534);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.customRecoilPNL);
-            this.Controls.Add(this.operatorComboBox);
+            this.Controls.Add(this.comboBoxesPanel);
             this.Controls.Add(this.mainSettingsPNL);
             this.Controls.Add(this.topBarPNL);
             this.Font = new System.Drawing.Font("JetBrains Mono", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -273,6 +338,8 @@
             this.customRecoilPNL.ResumeLayout(false);
             this.customRecoilPNL.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.comboBoxesPanel.ResumeLayout(false);
+            this.comboBoxesPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -291,5 +358,9 @@
         private System.Windows.Forms.Label customRecoilLabel;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button hideBTN;
+        private System.Windows.Forms.Panel comboBoxesPanel;
+        private System.Windows.Forms.ComboBox weaponComboBox;
+        private System.Windows.Forms.Label weaponCombLabel;
+        private System.Windows.Forms.Label operatorCombLabel;
     }
 }
