@@ -153,8 +153,8 @@ namespace R6Schulprojekt
             recoilSlider.Enabled = false;
 
 
-            operatorComboBox.DataSource = operators;
-            operatorComboBox.DisplayMember = "Name";
+            operatorListBox.DataSource = operators;
+            operatorListBox.DisplayMember = "Name";
         }
 
         [DllImport("user32.dll")]
@@ -171,25 +171,6 @@ namespace R6Schulprojekt
         private void baseWindow_Load(object sender, EventArgs e)
         {
             FadeInAnimation.Start(this);
-        }
-
-        private void weaponCOMBX_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (weaponComboBox.SelectedItem is Weapon selectedWeapon)
-            {
-                pullDownRate = selectedWeapon.Recoil;
-                recoilSlider.Value = pullDownRate;
-                customRecoilLabel.Text = $"Recoil: {pullDownRate}";
-            }
-        }
-
-        private void operatorCOMBX_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (operatorComboBox.SelectedItem is Operator selectedOperator)
-            {
-                weaponComboBox.DataSource = selectedOperator.Weapons;
-                weaponComboBox.DisplayMember = "Name";
-            }
         }
 
         private void toggleCHKBX_CheckedChanged(object sender, EventArgs e)
@@ -349,5 +330,24 @@ namespace R6Schulprojekt
         }
 
         #endregion
+
+        private void operatorListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (operatorListBox.SelectedItem is Operator selectedOperator)
+            {
+                weaponsListBox.DataSource = selectedOperator.Weapons;
+                weaponsListBox.DisplayMember = "Name";
+            }
+        }
+
+        private void weaponsListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (weaponsListBox.SelectedItem is Weapon selectedWeapon)
+            {
+                pullDownRate = selectedWeapon.Recoil;
+                recoilSlider.Value = pullDownRate;
+                customRecoilLabel.Text = $"Recoil: {pullDownRate}";
+            }
+        }
     }
 }
