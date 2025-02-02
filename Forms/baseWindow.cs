@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Linq;
 using System.Runtime.InteropServices;
 using System.Threading;
 using System.Windows.Forms;
+using R6Schulprojekt.Models;
 using R6Schulprojekt.Utils;
 
 namespace R6Schulprojekt
@@ -16,6 +18,17 @@ namespace R6Schulprojekt
 
         private readonly List<Operator> operators = new List<Operator>
         {
+            new Operator("Sledge", new List<Weapon>
+            {
+                new Weapon("L85A2", 10),
+                new Weapon("M590A1", 12)
+            }),
+            new Operator("Thatcher", new List<Weapon>
+            {
+                new Weapon("L85A2", 34),
+                new Weapon("AR33", 28),
+                new Weapon("M590A1", 16)
+            }),
             new Operator("Ash", new List<Weapon>
             {
                 new Weapon("R4-C", 53),
@@ -30,15 +43,83 @@ namespace R6Schulprojekt
                 new Weapon("F2", 75),
                 new Weapon("417", 30)
             }),
-            new Operator("Sledge", new List<Weapon>
+            new Operator("Montagne", new List<Weapon>
             {
-                new Weapon("L85A2", 10),
-                new Weapon("M590A1", 12)
+                new Weapon("Le Roc Shield", 0)
+            }),
+            new Operator("Glaz", new List<Weapon>
+            {
+                new Weapon("OTs-03", 36)
+            }),
+            new Operator("Fuze", new List<Weapon>
+            {
+                new Weapon("6P41", 41),
+                new Weapon("AK-12", 21),
+                new Weapon("Ballistic Shield", 10)
+            }),
+            new Operator("Kapkan", new List<Weapon>
+            {
+                new Weapon("9x19VSN", 21),
+                new Weapon("SASG-12", 18)
+            }),
+            new Operator("IQ", new List<Weapon>
+            {
+                new Weapon("AUG A2", 53),
+                new Weapon("552 Commando", 21),
+                new Weapon("G8A1", 18)
+            }),
+            new Operator("Blitz", new List<Weapon>
+            {
+                new Weapon("G52 Tactical Shield", 0)
+            }),
+            new Operator("Bandit", new List<Weapon>
+            {
+                new Weapon("MP7", 19),
+                new Weapon("M870", 14)
+            }),
+            new Operator("Jäger", new List<Weapon>
+            {
+                new Weapon("416-C Carbine", 23)
+            }),
+            new Operator("Buck", new List<Weapon>
+            {
+                new Weapon("C8-SFW", 50),
+                new Weapon("CAMRS", 38)
+            }),
+            new Operator("Frost", new List<Weapon>
+            {
+                new Weapon("Super 90", 30),
+                new Weapon("9mm C1", 18)
+            }),
+            new Operator("Blackbeard", new List<Weapon>
+            {
+                new Weapon("Mk17 CQB", 10),
+                new Weapon("SR-25", 38)
             }),
             new Operator("Valkyrie", new List<Weapon>
             {
                 new Weapon("MPX", 19),
                 new Weapon("SPAS-12", 14)
+            }),
+            new Operator("Capitao", new List<Weapon>
+            {
+                new Weapon("PARA-308", 38),
+                new Weapon("M249", 15)
+            }),
+            new Operator("Caveira", new List<Weapon>
+            {
+                new Weapon("M12", 25),
+                new Weapon("SPAS-15", 22)
+            }),
+            new Operator("Hibana", new List<Weapon>
+            {
+                new Weapon("Type-89", 38),
+                new Weapon("SuperNova", 25)
+            }),
+            new Operator("Echo", new List<Weapon>
+            {
+                new Weapon("MP5SD", 21),
+                new Weapon("SuperNova", 25)
             }),
             new Operator("Jackal", new List<Weapon>
             {
@@ -46,20 +127,41 @@ namespace R6Schulprojekt
                 new Weapon("PDW9", 35),
                 new Weapon("ITA12L", 15)
             }),
-            new Operator("Bandit", new List<Weapon>
-            {
-                new Weapon("MP7", 19),
-                new Weapon("M870", 14)
-            }),
             new Operator("Mira", new List<Weapon>
             {
                 new Weapon("Vector .45 ACP", 33),
                 new Weapon("ITA12L", 22)
             }),
-            new Operator("Kaid", new List<Weapon>
+            new Operator("Lesion", new List<Weapon>
             {
-                new Weapon("TCSG12", 33),
-                new Weapon("AUG A3", 33)
+                new Weapon("T-5 SMG", 30),
+                new Weapon("Six12 SD", 18)
+            }),
+            new Operator("Zofia", new List<Weapon>
+            {
+                new Weapon("LMG-E", 36),
+                new Weapon("M762", 33)
+            }),
+            new Operator("Dokkaebi", new List<Weapon>
+            {
+                new Weapon("Mk 14 EBR", 42),
+                new Weapon("BOSG.12.2", 25)
+            }),
+            new Operator("Vigil", new List<Weapon>
+            {
+                new Weapon("K1A", 29),
+                new Weapon("BOSG.12.2", 25)
+            }),
+            new Operator("Lion", new List<Weapon>
+            {
+                new Weapon("V308", 35),
+                new Weapon("417", 35),
+                new Weapon("SG-CQB", 16)
+            }),
+            new Operator("Finka", new List<Weapon>
+            {
+                new Weapon("Spear .308", 30),
+                new Weapon("6P41", 18)
             }),
             new Operator("Maestro", new List<Weapon>
             {
@@ -71,70 +173,85 @@ namespace R6Schulprojekt
                 new Weapon("Mx4 Storm", 27),
                 new Weapon("ACS12", 20)
             }),
-            new Operator("Doc", new List<Weapon>
+            new Operator("Clash", new List<Weapon>
             {
-                new Weapon("MP5", 43),
-                new Weapon("SG-CQB", 18),
-                new Weapon("P90", 25)
+                new Weapon("CCE Shield", 0)
             }),
-            new Operator("Rook", new List<Weapon>
+            new Operator("Maverick", new List<Weapon>
             {
-                new Weapon("MP5", 43),
-                new Weapon("SG-CQB", 18),
-                new Weapon("P90", 25)
+                new Weapon("M4", 38),
+                new Weapon("AR-15.50", 38)
             }),
-            new Operator("Thorn", new List<Weapon>
+            new Operator("Nomad", new List<Weapon>
             {
-                new Weapon("UZK50GI", 17)
+                new Weapon("AK-74M", 30),
+                new Weapon("ARX200", 25)
             }),
-            new Operator("Thatcher", new List<Weapon>
+            new Operator("Kaid", new List<Weapon>
             {
-                new Weapon("L85A2", 34),
-                new Weapon("AR33", 28),
-                new Weapon("M590A1", 16)
+                new Weapon("TCSG12", 33),
+                new Weapon("AUG A3", 33)
             }),
-            new Operator("Glaz", new List<Weapon>
+            new Operator("Mozzie", new List<Weapon>
             {
-                new Weapon("OTs-03", 36)
+                new Weapon("Commando 9", 28),
+                new Weapon("P10 RONI", 22)
             }),
-            new Operator("Fuze", new List<Weapon>
+            new Operator("Gridlock", new List<Weapon>
             {
-                new Weapon("6P41 LMG", 41),
-                new Weapon("AK-12", 21),
-                new Weapon("Ballistic Shield", 10)
+                new Weapon("F90", 35),
+                new Weapon("M249 SAW", 22)
             }),
-            new Operator("IQ", new List<Weapon>
+            new Operator("Warden", new List<Weapon>
             {
-                new Weapon("AUG A2", 53),
-                new Weapon("552 Commando", 21),
-                new Weapon("G8A1", 18)
+                new Weapon("MPX", 19),
+                new Weapon("M590A1", 22)
             }),
-            new Operator("Buck", new List<Weapon>
+            new Operator("Nøkk", new List<Weapon>
             {
-                new Weapon("C8-SFW", 50),
-                new Weapon("CAMRS", 38)
+                new Weapon("FMG-9", 25),
+                new Weapon("Six12 SD", 20)
             }),
-            new Operator("Blackbeard", new List<Weapon>
+            new Operator("Amaru", new List<Weapon>
             {
-                new Weapon("Mk17 CQB", 10),
-                new Weapon("SR-25", 38)
+                new Weapon("G8A1", 30),
+                new Weapon("SuperNova", 20)
             }),
-            new Operator("Capitao", new List<Weapon>
+            new Operator("Goyo", new List<Weapon>
             {
-                new Weapon("PARA-308", 38),
-                new Weapon("M249", 15)
+                new Weapon("Vector .45 ACP", 33),
+                new Weapon("TCSG12", 25)
             }),
-            new Operator("OSA", new List<Weapon>
+            new Operator("Iana", new List<Weapon>
             {
-                new Weapon("PDW9", 55),
-                new Weapon("556xi", 19)
+                new Weapon("ARX200", 27),
+                new Weapon("G36C", 22)
+            }),
+            new Operator("Oryx", new List<Weapon>
+            {
+                new Weapon("T-5 SMG", 22),
+                new Weapon("SPAS-12", 18)
+            }),
+            new Operator("Ace", new List<Weapon>
+            {
+                new Weapon("AK-12", 30)
+            }),
+            new Operator("Melusi", new List<Weapon>
+            {
+                new Weapon("MP5", 28)
+            }),
+            new Operator("Aruni", new List<Weapon>
+            {
+                new Weapon("P10 RONI", 22),
+                new Weapon("Mk 14 EBR", 35)
             }),
             new Operator("Azami", new List<Weapon>
             {
                 new Weapon("ACS12", 33),
-                new Weapon("9x9vsn", 22)
+                new Weapon("9x19VSN", 22)
             })
         };
+
 
         private bool keepRecoilActive;
 
@@ -207,6 +324,37 @@ namespace R6Schulprojekt
 
         #endregion
 
+        private void operatorListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (operatorListBox.SelectedItem is Operator selectedOperator)
+            {
+                weaponsListBox.DataSource = selectedOperator.Weapons;
+                weaponsListBox.DisplayMember = "Name";
+            }
+        }
+
+        private void weaponsListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (weaponsListBox.SelectedItem is Weapon selectedWeapon)
+            {
+                pullDownRate = selectedWeapon.Recoil;
+                recoilSlider.Value = pullDownRate;
+                customRecoilLabel.Text = $"Recoil: {pullDownRate}";
+            }
+        }
+
+        private void searchTextBox_TextChanged(object sender, EventArgs e)
+        {
+            var searchQuery = searchTextBox.Text.ToLower();
+
+            var filteredOperators = operators
+                .Where(op => op.Name.ToLower().Contains(searchQuery))
+                .ToList();
+
+            operatorListBox.DataSource = filteredOperators;
+            operatorListBox.DisplayMember = "Name";
+        }
+
         [StructLayout(LayoutKind.Sequential)]
         private struct INPUT
         {
@@ -223,31 +371,6 @@ namespace R6Schulprojekt
             public int dwFlags;
             public int time;
             public IntPtr dwExtraInfo;
-        }
-
-        public class Weapon
-        {
-            public Weapon(string name, int recoil)
-            {
-                Name = name;
-                Recoil = recoil;
-            }
-
-            public string Name { get; set; }
-            public int Recoil { get; set; }
-        }
-
-        // Operator Klasse
-        public class Operator
-        {
-            public Operator(string name, List<Weapon> weapons)
-            {
-                Name = name;
-                Weapons = weapons;
-            }
-
-            public string Name { get; set; }
-            public List<Weapon> Weapons { get; set; }
         }
 
         #region Recoil Control
@@ -330,24 +453,5 @@ namespace R6Schulprojekt
         }
 
         #endregion
-
-        private void operatorListBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (operatorListBox.SelectedItem is Operator selectedOperator)
-            {
-                weaponsListBox.DataSource = selectedOperator.Weapons;
-                weaponsListBox.DisplayMember = "Name";
-            }
-        }
-
-        private void weaponsListBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (weaponsListBox.SelectedItem is Weapon selectedWeapon)
-            {
-                pullDownRate = selectedWeapon.Recoil;
-                recoilSlider.Value = pullDownRate;
-                customRecoilLabel.Text = $"Recoil: {pullDownRate}";
-            }
-        }
     }
 }
