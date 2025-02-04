@@ -46,11 +46,13 @@
             this.weaponCombLabel = new System.Windows.Forms.Label();
             this.operatorListBox = new System.Windows.Forms.ListBox();
             this.operatorCombLabel = new System.Windows.Forms.Label();
+            this.operatorPicBox = new System.Windows.Forms.PictureBox();
             this.topBarPNL.SuspendLayout();
             this.mainSettingsPNL.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.recoilSlider)).BeginInit();
             this.customRecoilPNL.SuspendLayout();
             this.comboBoxesPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.operatorPicBox)).BeginInit();
             this.SuspendLayout();
             // 
             // closeBTN
@@ -221,6 +223,7 @@
             // 
             // comboBoxesPanel
             // 
+            this.comboBoxesPanel.Controls.Add(this.operatorPicBox);
             this.comboBoxesPanel.Controls.Add(this.searchTextBox);
             this.comboBoxesPanel.Controls.Add(this.weaponsListBox);
             this.comboBoxesPanel.Controls.Add(this.weaponCombLabel);
@@ -255,7 +258,7 @@
             this.weaponsListBox.ItemHeight = 14;
             this.weaponsListBox.Location = new System.Drawing.Point(170, 56);
             this.weaponsListBox.Name = "weaponsListBox";
-            this.weaponsListBox.Size = new System.Drawing.Size(153, 254);
+            this.weaponsListBox.Size = new System.Drawing.Size(153, 128);
             this.weaponsListBox.TabIndex = 13;
             this.weaponsListBox.SelectedIndexChanged += new System.EventHandler(this.weaponsListBox_SelectedIndexChanged);
             // 
@@ -301,6 +304,15 @@
             this.operatorCombLabel.Text = "Operators:";
             this.operatorCombLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // operatorPicBox
+            // 
+            this.operatorPicBox.Location = new System.Drawing.Point(170, 190);
+            this.operatorPicBox.Name = "operatorPicBox";
+            this.operatorPicBox.Size = new System.Drawing.Size(153, 120);
+            this.operatorPicBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.operatorPicBox.TabIndex = 15;
+            this.operatorPicBox.TabStop = false;
+            // 
             // BaseWindow
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -329,6 +341,7 @@
             this.customRecoilPNL.PerformLayout();
             this.comboBoxesPanel.ResumeLayout(false);
             this.comboBoxesPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.operatorPicBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -351,5 +364,6 @@
         private System.Windows.Forms.ListBox operatorListBox;
         private System.Windows.Forms.ListBox weaponsListBox;
         private System.Windows.Forms.TextBox searchTextBox;
+        private System.Windows.Forms.PictureBox operatorPicBox;
     }
 }

@@ -35,7 +35,6 @@ namespace R6Schulprojekt.Data
             }),
             new Operator("Montagne", new List<Weapon>
             {
-                new Weapon("Le Roc Shield", 0),
                 WeaponDatabase.P9
             }),
             new Operator("Glaz", new List<Weapon>
