@@ -1,12 +1,12 @@
-﻿using System;
+﻿using R6Schulprojekt.Models;
+using R6Schulprojekt.Utils;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Threading;
 using System.Windows.Forms;
-using R6Schulprojekt.Models;
-using R6Schulprojekt.Utils;
 
 namespace R6Schulprojekt
 {
@@ -16,8 +16,10 @@ namespace R6Schulprojekt
         private const int INPUT_MOUSE = 0;
         private const int MOUSEEVENTF_MOVE = 0x0001;
 
+        #region Operator-list
         private readonly List<Operator> operators = new List<Operator>
         {
+            #region Attacker
             new Operator("Sledge", new List<Weapon>
             {
                 new Weapon("L85A2", 10),
@@ -57,11 +59,6 @@ namespace R6Schulprojekt
                 new Weapon("AK-12", 21),
                 new Weapon("Ballistic Shield", 10)
             }),
-            new Operator("Kapkan", new List<Weapon>
-            {
-                new Weapon("9x19VSN", 21),
-                new Weapon("SASG-12", 18)
-            }),
             new Operator("IQ", new List<Weapon>
             {
                 new Weapon("AUG A2", 53),
@@ -72,6 +69,150 @@ namespace R6Schulprojekt
             {
                 new Weapon("G52 Tactical Shield", 0)
             }),
+            new Operator("Buck", new List<Weapon>
+            {
+                new Weapon("C8-SFW", 50),
+                new Weapon("CAMRS", 38)
+            }),
+            new Operator("Blackbeard", new List<Weapon>
+            {
+                new Weapon("Mk17 CQB", 10),
+                new Weapon("SR-25", 38)
+            }),
+            new Operator("Capitao", new List<Weapon>
+            {
+                new Weapon("PARA-308", 38),
+                new Weapon("M249", 15)
+            }),
+            new Operator("Jackal", new List<Weapon>
+            {
+                new Weapon("C7E", 40),
+                new Weapon("PDW9", 35),
+                new Weapon("ITA12L", 15)
+            }),
+            new Operator("Zofia", new List<Weapon>
+            {
+                new Weapon("LMG-E", 36),
+                new Weapon("M762", 33)
+            }),
+            new Operator("Dokkaebi", new List<Weapon>
+            {
+                new Weapon("Mk 14 EBR", 42),
+                new Weapon("BOSG.12.2", 25)
+            }),
+            new Operator("Lion", new List<Weapon>
+            {
+                new Weapon("V308", 35),
+                new Weapon("417", 35),
+                new Weapon("SG-CQB", 16)
+            }),
+            new Operator("Finka", new List<Weapon>
+            {
+                new Weapon("Spear .308", 30),
+                new Weapon("6P41", 18)
+            }),
+            new Operator("Maverick", new List<Weapon>
+            {
+                new Weapon("M4", 38),
+                new Weapon("AR-15.50", 38)
+            }),
+            new Operator("Nomad", new List<Weapon>
+            {
+                new Weapon("AK-74M", 30),
+                new Weapon("ARX200", 25)
+            }),
+            new Operator("Gridlock", new List<Weapon>
+            {
+                new Weapon("F90", 35),
+                new Weapon("M249 SAW", 22)
+            }),
+            new Operator("Nøkk", new List<Weapon>
+            {
+                new Weapon("FMG-9", 25),
+                new Weapon("Six12 SD", 20)
+            }),
+            new Operator("Amaru", new List<Weapon>
+            {
+                new Weapon("G8A1", 30),
+                new Weapon("SuperNova", 20)
+            }),
+            new Operator("Iana", new List<Weapon>
+            {
+                new Weapon("ARX200", 27),
+                new Weapon("G36C", 22)
+            }),
+            new Operator("Ace", new List<Weapon>
+            {
+                new Weapon("AK-12", 30)
+            }),
+            new Operator("Striker", new List<Weapon>
+            {
+                new Weapon("M4", 30),
+                new Weapon("M249", 40)
+            }),
+            new Operator("Deimos", new List<Weapon>
+            {
+                new Weapon("AK-74M", 33),
+                new Weapon("M590A1", 33)
+            }),
+            new Operator("Ram", new List<Weapon>
+            {
+                new Weapon("R4-C", 53),
+                new Weapon("LGM-E", 32)
+            }),
+            new Operator("Brava", new List<Weapon>
+            {
+                new Weapon("Para-308", 29),
+                new Weapon("CAMRS", 33)
+            }),
+            new Operator("Grim", new List<Weapon>
+            {
+                new Weapon("552 Commando", 21),
+                new Weapon("SG-CQB", 33)
+            }),
+            new Operator("Sens", new List<Weapon>
+            {
+                new Weapon("417", 33),
+                new Weapon("POF9", 38)
+            }),
+            new Operator("OSA", new List<Weapon>
+            {
+                new Weapon("556XI", 22),
+                new Weapon("PDW9", 29)
+            }),
+            new Operator("Flores", new List<Weapon>
+            {
+                new Weapon("AR33", 28),
+                new Weapon("SR-25", 33)
+            }),
+            new Operator("Zero", new List<Weapon>
+            {
+                new Weapon("SC3000K", 27),
+                new Weapon("MP7", 17)
+            }),
+            new Operator("Kali", new List<Weapon>
+            {
+                new Weapon("SPSMG9", 34),
+                new Weapon("C75 Auto", 34)
+            }),
+            new Operator("Nokk", new List<Weapon>
+            {
+                new Weapon("FMG-9", 25),
+                new Weapon("SIX12 SD", 33)
+            }),
+            new Operator("Ying", new List<Weapon>
+            {
+                new Weapon("T-95 LSW", 33),
+                new Weapon("SIX12", 33)
+            }),
+            #endregion
+
+            #region Defender
+            new Operator("Kapkan", new List<Weapon>
+            {
+                new Weapon("9x19VSN", 21),
+                new Weapon("SASG-12", 18)
+            }),
             new Operator("Bandit", new List<Weapon>
             {
                 new Weapon("MP7", 19),
@@ -81,30 +222,15 @@ namespace R6Schulprojekt
             {
                 new Weapon("416-C Carbine", 23)
             }),
-            new Operator("Buck", new List<Weapon>
-            {
-                new Weapon("C8-SFW", 50),
-                new Weapon("CAMRS", 38)
-            }),
             new Operator("Frost", new List<Weapon>
             {
                 new Weapon("Super 90", 30),
                 new Weapon("9mm C1", 18)
             }),
-            new Operator("Blackbeard", new List<Weapon>
-            {
-                new Weapon("Mk17 CQB", 10),
-                new Weapon("SR-25", 38)
-            }),
             new Operator("Valkyrie", new List<Weapon>
             {
                 new Weapon("MPX", 19),
                 new Weapon("SPAS-12", 14)
-            }),
-            new Operator("Capitao", new List<Weapon>
-            {
-                new Weapon("PARA-308", 38),
-                new Weapon("M249", 15)
             }),
             new Operator("Caveira", new List<Weapon>
             {
@@ -121,12 +247,6 @@ namespace R6Schulprojekt
                 new Weapon("MP5SD", 21),
                 new Weapon("SuperNova", 25)
             }),
-            new Operator("Jackal", new List<Weapon>
-            {
-                new Weapon("C7E", 40),
-                new Weapon("PDW9", 35),
-                new Weapon("ITA12L", 15)
-            }),
             new Operator("Mira", new List<Weapon>
             {
                 new Weapon("Vector .45 ACP", 33),
@@ -137,36 +257,10 @@ namespace R6Schulprojekt
                 new Weapon("T-5 SMG", 30),
                 new Weapon("Six12 SD", 18)
             }),
-            new Operator("Zofia", new List<Weapon>
-            {
-                new Weapon("LMG-E", 36),
-                new Weapon("M762", 33)
-            }),
-            new Operator("Dokkaebi", new List<Weapon>
-            {
-                new Weapon("Mk 14 EBR", 42),
-                new Weapon("BOSG.12.2", 25)
-            }),
             new Operator("Vigil", new List<Weapon>
             {
                 new Weapon("K1A", 29),
                 new Weapon("BOSG.12.2", 25)
-            }),
-            new Operator("Lion", new List<Weapon>
-            {
-                new Weapon("V308", 35),
-                new Weapon("417", 35),
-                new Weapon("SG-CQB", 16)
-            }),
-            new Operator("Finka", new List<Weapon>
-            {
-                new Weapon("Spear .308", 30),
-                new Weapon("6P41", 18)
-            }),
-            new Operator("Maestro", new List<Weapon>
-            {
-                new Weapon("ALDA 5.56", 23),
-                new Weapon("ACS12", 17)
             }),
             new Operator("Alibi", new List<Weapon>
             {
@@ -175,17 +269,9 @@ namespace R6Schulprojekt
             }),
             new Operator("Clash", new List<Weapon>
             {
-                new Weapon("CCE Shield", 0)
-            }),
-            new Operator("Maverick", new List<Weapon>
-            {
-                new Weapon("M4", 38),
-                new Weapon("AR-15.50", 38)
-            }),
-            new Operator("Nomad", new List<Weapon>
-            {
-                new Weapon("AK-74M", 30),
-                new Weapon("ARX200", 25)
+                new Weapon("SPSMG9", 34),
+                new Weapon("Super Shorty", 33),
+                new Weapon("P-10C", 22)
             }),
             new Operator("Kaid", new List<Weapon>
             {
@@ -197,48 +283,30 @@ namespace R6Schulprojekt
                 new Weapon("Commando 9", 28),
                 new Weapon("P10 RONI", 22)
             }),
-            new Operator("Gridlock", new List<Weapon>
-            {
-                new Weapon("F90", 35),
-                new Weapon("M249 SAW", 22)
-            }),
             new Operator("Warden", new List<Weapon>
             {
                 new Weapon("MPX", 19),
                 new Weapon("M590A1", 22)
             }),
-            new Operator("Nøkk", new List<Weapon>
+            new Operator("Maestro", new List<Weapon>
             {
-                new Weapon("FMG-9", 25),
-                new Weapon("Six12 SD", 20)
-            }),
-            new Operator("Amaru", new List<Weapon>
-            {
-                new Weapon("G8A1", 30),
-                new Weapon("SuperNova", 20)
+                new Weapon("ALDA 5.56", 23),
+                new Weapon("ACS12", 17)
             }),
             new Operator("Goyo", new List<Weapon>
             {
                 new Weapon("Vector .45 ACP", 33),
                 new Weapon("TCSG12", 25)
             }),
-            new Operator("Iana", new List<Weapon>
-            {
-                new Weapon("ARX200", 27),
-                new Weapon("G36C", 22)
-            }),
             new Operator("Oryx", new List<Weapon>
             {
                 new Weapon("T-5 SMG", 22),
                 new Weapon("SPAS-12", 18)
             }),
-            new Operator("Ace", new List<Weapon>
-            {
-                new Weapon("AK-12", 30)
-            }),
             new Operator("Melusi", new List<Weapon>
             {
-                new Weapon("MP5", 28)
+                new Weapon("MP5", 28),
+                new Weapon("Super 90", 34)
             }),
             new Operator("Aruni", new List<Weapon>
             {
@@ -249,8 +317,93 @@ namespace R6Schulprojekt
             {
                 new Weapon("ACS12", 33),
                 new Weapon("9x19VSN", 22)
+            }),
+            new Operator("Skopos", new List<Weapon>
+            {
+                new Weapon("PCX-33", 30)
+            }),
+            new Operator("Sentry", new List<Weapon>
+            {
+                new Weapon("Commando 9", 30),
+                new Weapon("M850", 33)
+            }),
+            new Operator("Tubarao", new List<Weapon>
+            {
+                new Weapon("MPX", 19),
+                new Weapon("AR-15.50", 33)
+            }),
+            new Operator("Fenrir", new List<Weapon>
+            {
+                new Weapon("MP7", 19),
+                new Weapon("SASG-12", 33)
+            }),
+            new Operator("Solis", new List<Weapon>
+            {
+                new Weapon("ITA12L", 33),
+                new Weapon("P90", 50),
+                new Weapon("SMG-11", 33)
+            }),
+            new Operator("Thorn", new List<Weapon>
+            {
+                new Weapon("UZK50GI", 31),
+                new Weapon("M870", 33)
+            }),
+            new Operator("Thunderbird", new List<Weapon>
+            {
+                new Weapon("Spear .308", 30),
+                new Weapon("SPAS-15", 33)
+            }),
+            new Operator("Wamai", new List<Weapon>
+            {
+                new Weapon("AUG A2", 39),
+                new Weapon("MP5K", 32)
+            }),
+            new Operator("Ela", new List<Weapon>
+            {
+                new Weapon("Scorpion Evo", 34),
+                new Weapon("FO-12", 33)
+            }),
+            new Operator("Mute", new List<Weapon>
+            {
+                new Weapon("MP5K", 33),
+                new Weapon("M590A1", 34)
+            }),
+            new Operator("Smoke", new List<Weapon>
+            {
+                new Weapon("SMG-11", 33),
+                new Weapon("M590A1", 34),
+                new Weapon("FMG-9", 25)
+            }),
+            new Operator("Castle", new List<Weapon>
+            {
+                new Weapon("UMP45", 35),
+                new Weapon("M1014", 34)
+            }),
+            new Operator("Pulse", new List<Weapon>
+            {
+                new Weapon("UMP45", 35),
+                new Weapon("M1014", 34)
+            }),
+            new Operator("DOC", new List<Weapon>
+            {
+                new Weapon("MP5", 33),
+                new Weapon("P90", 33),
+                new Weapon("SG-CQB", 34)
+            }),
+            new Operator("Rook", new List<Weapon>
+            {
+                new Weapon("MP5", 33),
+                new Weapon("P90", 33),
+                new Weapon("SG-CQB", 34)
+            }),
+            new Operator("Tachanka", new List<Weapon>
+            {
+                new Weapon("DP27", 49),
+                new Weapon("9x18VSN", 22)
             })
+            #endregion
         };
+        #endregion
 
 
         private bool keepRecoilActive;
