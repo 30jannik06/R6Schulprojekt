@@ -9,7 +9,7 @@ namespace R6Schulprojekt.Data
         public static readonly Weapon L85A2 = new Weapon("L85A2", 10);
         public static readonly Weapon M590A1 = new Weapon("M590A1", 12);
         public static readonly Weapon AR33 = new Weapon("AR33", 28);
-        public static readonly Weapon R4C = new Weapon("R4-C", 53);
+        public static readonly Weapon R4C = new Weapon("R4-C", 47);
         public static readonly Weapon G36C = new Weapon("G36-C", 45);
         public static readonly Weapon x556XI = new Weapon("556xi", 22);
         public static readonly Weapon F2 = new Weapon("F2", 22);
@@ -49,7 +49,7 @@ namespace R6Schulprojekt.Data
         public static readonly Weapon SIX12SD = new Weapon("Six12 SD", 20);
         public static readonly Weapon Supernova = new Weapon("Supernova", 20);
         public static readonly Weapon POF9 = new Weapon("POF9", 38);
-        public static readonly Weapon SC3000K = new Weapon("SC3000K", 27);
+        public static readonly Weapon SC3000K = new Weapon("SC3000K", 31);
         public static readonly Weapon MP7 = new Weapon("MP7", 17);
         public static readonly Weapon SPSMG9 = new Weapon("SPSMG9", 34);
         public static readonly Weapon C75AUTO = new Weapon("C75 Auto", 17);
@@ -67,7 +67,7 @@ namespace R6Schulprojekt.Data
         public static readonly Weapon TYPE89 = new Weapon("Type-89", 38);
         public static readonly Weapon MP5SD = new Weapon("MP5SD", 21);
         public static readonly Weapon Vector45ACP = new Weapon("Vector .45 ACP", 33);
-        public static readonly Weapon T5SMG = new Weapon("T-5 SMG", 30);
+        public static readonly Weapon T5SMG = new Weapon("T-5 SMG", 33);
         public static readonly Weapon MX4STORM = new Weapon("Mx4 Storm", 27);
         public static readonly Weapon K1A = new Weapon("K1A", 29);
         public static readonly Weapon ACS12 = new Weapon("ACS12", 20);
@@ -76,7 +76,7 @@ namespace R6Schulprojekt.Data
         public static readonly Weapon TCSG12 = new Weapon("TCSG12", 33);
         public static readonly Weapon ALDA556 = new Weapon("ALDA 5.56", 23);
         public static readonly Weapon COMMANDO9 = new Weapon("Commando 9", 28);
-        public static readonly Weapon P10RONI = new Weapon("P10 RONI", 22);
+        public static readonly Weapon P10RONI = new Weapon("P10 RONI", 24);
         public static readonly Weapon AUGA3 = new Weapon("AUG A3", 33);
         public static readonly Weapon PCX33 = new Weapon("PCX-33", 30);
         public static readonly Weapon M850 = new Weapon("M850", 33);
@@ -85,7 +85,7 @@ namespace R6Schulprojekt.Data
         public static readonly Weapon UZK50GI = new Weapon("UZK50GI", 31);
         public static readonly Weapon SCROPIONEVO = new Weapon("Scorpion Evo", 34);
         public static readonly Weapon FO12 = new Weapon("FO-12", 33);
-        public static readonly Weapon UMP45 = new Weapon("UMP45", 35);
+        public static readonly Weapon UMP45 = new Weapon("UMP45", 20);
         public static readonly Weapon M1014 = new Weapon("M1014", 34);
         public static readonly Weapon DP27 = new Weapon("DP27", 49);
         public static readonly Weapon x9X18VSN = new Weapon("9x18VSN", 22);

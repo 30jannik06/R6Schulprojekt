@@ -57,10 +57,10 @@
     <ApplicationIcon>Logo.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>4C78D1674F6005DCA6BA5D2626B4E7736F9E546B</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>E6B3788D7315FD80C44E31F351886889F14257BF</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>R6Schulprojekt_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>R6Schulprojekt_1_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>

@@ -41,12 +41,12 @@
             this.customRecoilLabel = new System.Windows.Forms.Label();
             this.customRecoilCHKBX = new System.Windows.Forms.CheckBox();
             this.comboBoxesPanel = new System.Windows.Forms.Panel();
+            this.operatorPicBox = new System.Windows.Forms.PictureBox();
             this.searchTextBox = new System.Windows.Forms.TextBox();
             this.weaponsListBox = new System.Windows.Forms.ListBox();
             this.weaponCombLabel = new System.Windows.Forms.Label();
             this.operatorListBox = new System.Windows.Forms.ListBox();
             this.operatorCombLabel = new System.Windows.Forms.Label();
-            this.operatorPicBox = new System.Windows.Forms.PictureBox();
             this.topBarPNL.SuspendLayout();
             this.mainSettingsPNL.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.recoilSlider)).BeginInit();
@@ -235,6 +235,15 @@
             this.comboBoxesPanel.Size = new System.Drawing.Size(323, 320);
             this.comboBoxesPanel.TabIndex = 11;
             // 
+            // operatorPicBox
+            // 
+            this.operatorPicBox.Location = new System.Drawing.Point(170, 190);
+            this.operatorPicBox.Name = "operatorPicBox";
+            this.operatorPicBox.Size = new System.Drawing.Size(153, 120);
+            this.operatorPicBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.operatorPicBox.TabIndex = 15;
+            this.operatorPicBox.TabStop = false;
+            // 
             // searchTextBox
             // 
             this.searchTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
@@ -303,15 +312,6 @@
             this.operatorCombLabel.TabIndex = 8;
             this.operatorCombLabel.Text = "Operators:";
             this.operatorCombLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // operatorPicBox
-            // 
-            this.operatorPicBox.Location = new System.Drawing.Point(170, 190);
-            this.operatorPicBox.Name = "operatorPicBox";
-            this.operatorPicBox.Size = new System.Drawing.Size(153, 120);
-            this.operatorPicBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.operatorPicBox.TabIndex = 15;
-            this.operatorPicBox.TabStop = false;
             // 
             // BaseWindow
             // 
