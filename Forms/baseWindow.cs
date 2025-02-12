@@ -5,7 +5,6 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
-using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Threading;
 using System.Windows.Forms;
@@ -14,18 +13,26 @@ namespace R6Schulprojekt
 {
     public partial class BaseWindow : Form
     {
-        //Move Variablen
+        // DLLImport for Key States
+        [DllImport("user32.dll")]
+        private static extern short GetAsyncKeyState(Keys vKey);
+
+        // DLLImport for Mouse Move
+        [DllImport("user32.dll")]
+        private static extern uint SendInput(uint nInputs, INPUT[] pInputs, int cbSize);
+
+        // Mouse Move Variables
         private const int INPUT_MOUSE = 0;
         private const int MOUSEEVENTF_MOVE = 0x0001;
 
+        // Loads Operators from Data/WeaponDatabse.cs
         List<Operator> operators = OperatorDatabase.Operators;
 
         private bool keepRecoilActive;
 
-        //Variablen
+        // Recoil Info Variables
         private int pullDownRate = 3;
         private Thread recoilThread;
-
 
         public BaseWindow()
         {
@@ -39,35 +46,9 @@ namespace R6Schulprojekt
             operatorListBox.DisplayMember = "Name";
         }
 
-        [DllImport("user32.dll")]
-        private static extern short GetAsyncKeyState(Keys vKey);
-
-        [DllImport("user32.dll")]
-        private static extern uint SendInput(uint nInputs, INPUT[] pInputs, int cbSize);
-
-
-        private void SetOperatorImage(string operatorName)
-        {
-            Type resourceType = typeof(R6Schulprojekt.Properties.Resources);
-            PropertyInfo prop = resourceType.GetProperty($"r6s_operator_{operatorName}");
-            if (prop != null)
-            {
-                var resource = prop.GetValue(null) as Image;
-                operatorPicBox.Image = resource;
-            }
-            else
-            {
-                Console.WriteLine("Ressource nicht gefunden.");
-            }
-        }
-
         private void baseWindow_Load(object sender, EventArgs e)
         {
             FadeInAnimation.Start(this);
-            SetOperatorImage("striker");
-
-            //string test = "striker";
-            //operatorPicBox.Image = R6Schulprojekt.Properties.Resources.r6s_operator_striker;
         }
 
         private void toggleCHKBX_CheckedChanged(object sender, EventArgs e)
@@ -85,24 +66,6 @@ namespace R6Schulprojekt
                 recoilThread?.Join();
             }
         }
-
-        #region Hide Button
-
-        private void hideBTN_Click(object sender, EventArgs e)
-        {
-            WindowState = FormWindowState.Minimized;
-        }
-
-        #endregion
-
-        #region Close Button
-
-        private void closeBTN_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
-        #endregion
 
         private void operatorListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -123,6 +86,7 @@ namespace R6Schulprojekt
             }
         }
 
+        #region Searchbar
         private void searchTextBox_TextChanged(object sender, EventArgs e)
         {
             var searchQuery = searchTextBox.Text.ToLower();
@@ -134,7 +98,9 @@ namespace R6Schulprojekt
             operatorListBox.DataSource = filteredOperators;
             operatorListBox.DisplayMember = "Name";
         }
+        #endregion
 
+        #region Recoil Control
         [StructLayout(LayoutKind.Sequential)]
         private struct INPUT
         {
@@ -152,8 +118,6 @@ namespace R6Schulprojekt
             public int time;
             public IntPtr dwExtraInfo;
         }
-
-        #region Recoil Control
 
         private void RecoilControl()
         {
@@ -230,6 +194,24 @@ namespace R6Schulprojekt
                 pullDownRate = recoilSlider.Value;
                 customRecoilLabel.Text = $"Custom Recoil: {recoilSlider.Value}";
             }
+        }
+
+        #endregion
+
+        #region Hide Button
+
+        private void hideBTN_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
+        }
+
+        #endregion
+
+        #region Close Button
+
+        private void closeBTN_Click(object sender, EventArgs e)
+        {
+            Close();
         }
 
         #endregion

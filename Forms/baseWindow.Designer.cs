@@ -41,7 +41,6 @@
             this.customRecoilLabel = new System.Windows.Forms.Label();
             this.customRecoilCHKBX = new System.Windows.Forms.CheckBox();
             this.comboBoxesPanel = new System.Windows.Forms.Panel();
-            this.operatorPicBox = new System.Windows.Forms.PictureBox();
             this.searchTextBox = new System.Windows.Forms.TextBox();
             this.weaponsListBox = new System.Windows.Forms.ListBox();
             this.weaponCombLabel = new System.Windows.Forms.Label();
@@ -52,7 +51,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.recoilSlider)).BeginInit();
             this.customRecoilPNL.SuspendLayout();
             this.comboBoxesPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.operatorPicBox)).BeginInit();
             this.SuspendLayout();
             // 
             // closeBTN
@@ -223,7 +221,6 @@
             // 
             // comboBoxesPanel
             // 
-            this.comboBoxesPanel.Controls.Add(this.operatorPicBox);
             this.comboBoxesPanel.Controls.Add(this.searchTextBox);
             this.comboBoxesPanel.Controls.Add(this.weaponsListBox);
             this.comboBoxesPanel.Controls.Add(this.weaponCombLabel);
@@ -234,15 +231,6 @@
             this.comboBoxesPanel.Name = "comboBoxesPanel";
             this.comboBoxesPanel.Size = new System.Drawing.Size(323, 320);
             this.comboBoxesPanel.TabIndex = 11;
-            // 
-            // operatorPicBox
-            // 
-            this.operatorPicBox.Location = new System.Drawing.Point(170, 192);
-            this.operatorPicBox.Name = "operatorPicBox";
-            this.operatorPicBox.Size = new System.Drawing.Size(153, 118);
-            this.operatorPicBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.operatorPicBox.TabIndex = 15;
-            this.operatorPicBox.TabStop = false;
             // 
             // searchTextBox
             // 
@@ -341,7 +329,6 @@
             this.customRecoilPNL.PerformLayout();
             this.comboBoxesPanel.ResumeLayout(false);
             this.comboBoxesPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.operatorPicBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -364,6 +351,5 @@
         private System.Windows.Forms.ListBox operatorListBox;
         private System.Windows.Forms.ListBox weaponsListBox;
         private System.Windows.Forms.TextBox searchTextBox;
-        private System.Windows.Forms.PictureBox operatorPicBox;
     }
 }
