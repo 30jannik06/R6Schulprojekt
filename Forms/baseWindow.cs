@@ -45,35 +45,29 @@ namespace R6Schulprojekt
         [DllImport("user32.dll")]
         private static extern uint SendInput(uint nInputs, INPUT[] pInputs, int cbSize);
 
-        protected override void OnPaint(PaintEventArgs e)
+
+        private void SetOperatorImage(string operatorName)
         {
-            //ApplyBackground.ApplyGradient(this, e);
+            Type resourceType = typeof(R6Schulprojekt.Properties.Resources);
+            PropertyInfo prop = resourceType.GetProperty($"r6s_operator_{operatorName}");
+            if (prop != null)
+            {
+                var resource = prop.GetValue(null) as Image;
+                operatorPicBox.Image = resource;
+            }
+            else
+            {
+                Console.WriteLine("Ressource nicht gefunden.");
+            }
         }
-
-        //private void SetOperatorImage(string operatorName)
-        //{
-        //    // Hole den Typ von Properties.Resources
-        //    Type resourceType = typeof(R6Schulprojekt.Properties.Resources);
-
-        //    // Suche die Eigenschaft mit dem gewünschten Namen
-        //    PropertyInfo? prop = resourceType.GetProperty($"r6s_operator_{operatorName}");
-
-        //    if (prop != null)
-        //    {
-        //        // Hole das Bild aus den Ressourcen
-        //        operatorPicBox.Image = (Image?)prop.GetValue(null, null);
-        //    }
-        //    else
-        //    {
-        //        MessageBox.Show("Bild nicht gefunden!");
-        //    }
-        //}
 
         private void baseWindow_Load(object sender, EventArgs e)
         {
             FadeInAnimation.Start(this);
+            SetOperatorImage("striker");
+
             //string test = "striker";
-            operatorPicBox.Image = R6Schulprojekt.Properties.Resources.r6s_operator_striker;
+            //operatorPicBox.Image = R6Schulprojekt.Properties.Resources.r6s_operator_striker;
         }
 
         private void toggleCHKBX_CheckedChanged(object sender, EventArgs e)
