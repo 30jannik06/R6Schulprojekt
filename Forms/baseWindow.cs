@@ -21,6 +21,28 @@ namespace R6Schulprojekt
         [DllImport("user32.dll")]
         private static extern uint SendInput(uint nInputs, INPUT[] pInputs, int cbSize);
 
+        [DllImport("dwmapi.dll")]
+        private static extern int DwmEnableBlurBehindWindow(IntPtr hWnd, ref DWM_BLURBEHIND pBlurBehind);
+
+        [StructLayout(LayoutKind.Sequential)]
+        public struct DWM_BLURBEHIND
+        {
+            public uint dwFlags;
+            [MarshalAs(UnmanagedType.Bool)]
+            public bool fEnable;
+            public IntPtr hRgnBlur;
+            [MarshalAs(UnmanagedType.Bool)]
+            public bool fTransitionOnMaximized;
+        }
+
+        // Flags für dwFlags
+        public enum DWM_BB : uint
+        {
+            Enable = 0x00000001,
+            BlurRegion = 0x00000002,
+            TransitionOnMaximized = 0x00000004
+        }
+
         // Mouse Move Variables
         private const int INPUT_MOUSE = 0;
         private const int MOUSEEVENTF_MOVE = 0x0001;
@@ -44,11 +66,28 @@ namespace R6Schulprojekt
 
             operatorListBox.DataSource = operators;
             operatorListBox.DisplayMember = "Name";
+            EnableGlass();
+
+            this.BackColor = Color.FromArgb(30, 30, 40);  // kein Alpha, aber dunkel
+            this.ForeColor = Color.Gainsboro;
+            this.DoubleBuffered = true;
         }
 
         private void baseWindow_Load(object sender, EventArgs e)
         {
             FadeInAnimation.Start(this);
+        }
+
+        // Blur aktivieren
+        void EnableGlass()
+        {
+            var blur = new DWM_BLURBEHIND
+            {
+                dwFlags = 1,
+                fEnable = true,
+                hRgnBlur = IntPtr.Zero
+            };
+            DwmEnableBlurBehindWindow(this.Handle, ref blur);
         }
 
         private void toggleCHKBX_CheckedChanged(object sender, EventArgs e)
